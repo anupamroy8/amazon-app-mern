@@ -1,59 +1,17 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
 body {
     line-height: 1;
     box-sizing: border-box;
-    height: 100vh;
     font-size: 1.6rem;
     font-family: Helvetica;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    height: 100vh;
 }
 
-/* MY CSS starts here */
 a{
     text-decoration: none;
+}
+a:hover{
+    color:rgb(245,188,105);
 }
 .grid-container{
     display: grid;
@@ -66,12 +24,13 @@ a{
     height: 100%;
 }
 .header{
-    background-color: rgb(19,25,33);
+    grid-area: header;
+    background-color: #203040;
+    color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    grid-area: header;
-    color: #ffffff;
+    padding: 0.5rem;
 }
 .header a {
     color: #ffffff;
@@ -100,18 +59,20 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .products li {
     flex: 0 1 34rem;
     margin: 1rem;
-    height: 30rem;
+    height: 50rem;
     border-bottom: .1rem #908c8c solid;
+    padding: 0;
 }
 .product{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    /* height: 100%; */
 }
 .product-name{
     font-size: 2rem;
@@ -126,6 +87,38 @@ a{
     font-weight: bold;
 }
 .product-img{
-    max-width: 20rem;
-    max-height: 20rem;
+    max-width: 34rem;
+    max-height: 34rem;
+}
+/* Side bar */
+.brand button{
+    font-size: 3rem;
+    padding: .5rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+.sidebar{
+    position: fixed;
+    transform: translateX(-30rem);
+    width: 30rem;
+    background-color: rgb(236, 215, 182);
+    height: 100%;
+}
+.sidebar.open{
+    transform: translateX(0);
+}
+.sidebarclose {
+    border-radius: 50%;
+    border: 0.1rem #000000 solid;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    padding-top: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
 }
